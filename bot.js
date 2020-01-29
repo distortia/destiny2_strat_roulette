@@ -18,10 +18,13 @@ bot.on('ready', () => {
 bot.on('message', msg => {
     if (msg.content === '!strat') {
         doc.getInfo((_err, info) => {
-            sheet = info.worksheets[0];
+            sheet = info.worksheets[0]
             sheet.getRows({
                 offset: 1,
-            }, function( err, rows ) {
+            }, (err, rows) => {
+                if (err) {
+                    console.dir(err)
+                }
                 random_row = randomNumber(rows.length)
                 row = rows[random_row]
                 strat = {
