@@ -29,7 +29,7 @@ bot.on('message', msg => {
                     description: row.description,
                     creator: row.creator
                 }
-                msg.channel.send(`#${random_row} **${strat.name}** - ${strat.description} by *${strat.creator}*`)
+                msg.reply(`#${random_row} **${strat.name}** - ${strat.description} by *${strat.creator}*`)
             })
         })
     }
